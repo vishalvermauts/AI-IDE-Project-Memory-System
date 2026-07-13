@@ -111,6 +111,10 @@ For standard GitHub Copilot or similar extensions:
 2. Ask the assistant:
    > *"Read .ai/README.md and follow the startup workflow to understand our project status and rules."*
 
+### 📥 Import via AI IDE Command
+You can instruct your agentic IDE to import and seed this setup directly by asking:
+> *"Import the AI Project Memory System template from `https://github.com/vishalvermauts/IDE-Memory.git` into my current project root directory and update `.ai/summary.md` with our tech stack."*
+
 ---
 
 ## 🚀 Getting Started (Quick Setup)
@@ -119,3 +123,32 @@ To use this memory system in your own project:
 1. Copy the `.ai` directory template from this repository into your project root.
 2. Update the `.ai/summary.md` file with your project's technology stack and modules.
 3. Add the startup instruction to your IDE's system prompt or configuration.
+
+---
+
+## 💾 How Memory Writing is Triggered & Automated
+
+A common problem with agentic IDEs is that **when they finish their token/message budget or hit a crash, they exit immediately without writing to the `.ai/` directory.** 
+
+To prevent this and guarantee continuity, use these strategies:
+
+### 1. Manual Handover Command (Best Practice)
+Before you expect the agent to stop, or when you are wrapping up a milestone, explicitly issue a command in the chat:
+> **"Run the completion checklist: update session.md and manifest.json with our recent changes."**
+
+This forces the AI to output file edits *before* you close the tab or start a new chat.
+
+### 2. Custom Scripts & Hooks (Git Integration)
+You can automate the generation of `manifest.json` or parts of `session.md` using simple pre-commit hooks or scripts. For example, a script to automatically parse modified files and write them to `manifest.json`:
+
+```bash
+# Example script to update manifest modified files list automatically before git commits:
+git status --porcelain | awk '{print $2}'
+```
+
+### 3. Agent Rules
+By placing the following instruction in your IDE's system instructions (e.g. `.cursorrules`), the agent will proactively write updates as it works:
+```text
+State Save Rule: Immediately after completing any file edit, command execution, or task step, you must update .ai/session.md and .ai/manifest.json to reflect the current workspace state. Do not wait for the end of the session.
+```
+
