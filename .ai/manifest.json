@@ -1,0 +1,12 @@
+{
+  "currentTask": "Define task name",
+  "nextTask": "Define next step",
+  "changedModules": [
+    "module-name"
+  ],
+  "recentlyModifiedFiles": [
+    "path/to/file"
+  ],
+  "currentBranch": "main",
+  "lastUpdated": "2026-01-01T00:00:00Z"
+}
