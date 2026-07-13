@@ -67,6 +67,9 @@ Before ending a session, the AI agent is instructed to update the memory files:
 - **Requires Initial Setup**: You must customize the files for your specific project's modules and folder maps.
 - **Storage**: Introduces a `.ai/` directory in the repository (though it should be kept extremely lightweight, under 50KB total).
 
+> [!CAUTION]
+> **Security & Credentials Warning**: Never write API keys, passwords, database credentials, or sensitive configuration values into any file under the `.ai/` directory. Because `.ai/` is checked into Git by default to sync memory across sessions, any credentials placed here risk being pushed to your public repository. Keep all secrets in `.env` files (which must remain in `.gitignore`).
+
 ---
 
 ## 📂 Directory Layout
