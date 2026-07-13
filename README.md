@@ -133,10 +133,10 @@ A common problem with agentic IDEs is that **when they finish their token/messag
 To prevent this and guarantee continuity, use these strategies:
 
 ### 1. Manual Handover Command (Best Practice)
-Before you expect the agent to stop, or when you are wrapping up a milestone, explicitly issue a command in the chat:
-> **"Run the completion checklist: update session.md and manifest.json with our recent changes."**
+Before you expect the agent to stop, when you are wrapping up a milestone, or if you notice you are running low on message budget, explicitly issue this single command in the chat:
+> **"Please run the completion checklist: verify all changes against the codebase and update `.ai/session.md`, `.ai/manifest.json`, and if necessary, `.ai/summary.md` and module docs under `.ai/docs/` with our recent work."**
 
-This forces the AI to output file edits *before* you close the tab or start a new chat.
+This forces the AI to output drop-in replacements for all outdated memory state files in a single turn *before* you close the session.
 
 ### 2. Custom Scripts & Hooks (Git Integration)
 You can automate the generation of `manifest.json` or parts of `session.md` using simple pre-commit hooks or scripts. For example, a script to automatically parse modified files and write them to `manifest.json`:
