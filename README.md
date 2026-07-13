@@ -1,4 +1,4 @@
-# AI Project Memory System (v2)
+# AI IDE Project Memory System (v2)
 
 A lightweight, standardized, and token-efficient workspace state and behavior persistence system designed for developer-AI agent collaboration. 
 
