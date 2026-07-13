@@ -111,18 +111,25 @@ For standard GitHub Copilot or similar extensions:
 2. Ask the assistant:
    > *"Read .ai/README.md and follow the startup workflow to understand our project status and rules."*
 
-### 📥 Import via AI IDE Command
-You can instruct your agentic IDE to import and seed this setup directly by asking:
-> *"Import the AI Project Memory System template from `https://github.com/vishalvermauts/IDE-Memory.git` into my current project root directory and update `.ai/summary.md` with our tech stack."*
+---
+
+## 🚀 Getting Started (Installation Options)
+
+Choose one of the methods below to add the `.ai` memory folder to your project root:
+
+### Option 1: Automate via AI IDE Import (Recommended)
+Because modern agentic IDEs support repository cloning and file integration, you can instruct your active AI assistant to fetch and seed this system automatically. 
+
+Simply copy-paste this prompt into your AI assistant chat window:
+> **"Please import the AI IDE Project Memory System template from `https://github.com/vishalvermauts/AI-IDE-Project-Memory-System.git` directly into my current project root directory, then update `.ai/summary.md` with my project's current details and tech stack."**
 
 ---
 
-## 🚀 Getting Started (Quick Setup)
-
-To use this memory system in your own project:
-1. Copy the `.ai` directory template from this repository into your project root.
-2. Update the `.ai/summary.md` file with your project's technology stack and modules.
-3. Add the startup instruction to your IDE's system prompt or configuration.
+### Option 2: Manual Setup
+1. Download or clone this repository manually.
+2. Copy the `.ai` directory template from this project into your own project root.
+3. Update `.ai/summary.md` with your project's technology stack, modules, and target milestones.
+4. Add the startup instruction workflow to your IDE's system prompt or configuration settings.
 
 ---
 
